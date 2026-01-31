@@ -1,11 +1,11 @@
 import express from "express";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 app.use(express.urlencoded({extended: true}));
 
-app.get("/test", (req, res) =>
+app.get("/prottoyrafi235_gmail_com", (req, res) =>
 {
     const x = Number(req.query.x);
     const y = Number(req.query.y);
@@ -15,10 +15,7 @@ app.get("/test", (req, res) =>
     return res.send(String(lcm(x, y)));
 });
 
-app.listen(port, () =>
-{
-    console.log(`Server started on port ${port}`);
-});
+app.listen(port);
 
 function hcf(x, y)
 {
